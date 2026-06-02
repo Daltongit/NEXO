@@ -1,0 +1,13 @@
+ .avatar-circle {
+     width: 2.6rem;
+     height: 2.6rem;
+     display: inline-grid;
+     place-items: center;
+     border-radius: 50%;
+     background: var(--gradient-primary);
+     color: var(--color-text-inverse);
+     font-size: var(--text-sm);
+     font-weight: 800;
+     box-shadow: var(--shadow-neon);
+     flex-shrink: 0;
+ }

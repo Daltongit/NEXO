@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXO | Panel principal</title>
+    <meta name="description"
+        content="Panel principal de NEXO para gestionar servicios estudiantiles, perfil, mensajes y órdenes." />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Urbanist:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/themes.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/components/buttons.css" />
+    <link rel="stylesheet" href="./css/components/cards.css" />
+    <link rel="stylesheet" href="./css/components/forms.css" />
+    <link rel="stylesheet" href="./css/components/sidebar.css" />
+    <link rel="stylesheet" href="./css/components/topbar.css" />
+    <link rel="stylesheet" href="./css/components/modals.css" />
+    <link rel="stylesheet" href="./css/components/badges.css" />
+    <link rel="stylesheet" href="./css/components/avatar.css" />
+    <link rel="stylesheet" href="./css/components/notifications.css" />
+    <link rel="stylesheet" href="./css/pages/dashboard.css" />
+    <link rel="stylesheet" href="./css/pages/services.css" />
+    <link rel="stylesheet" href="./css/pages/profile.css" />
+    <link rel="stylesheet" href="./css/pages/messages.css" />
+    <link rel="stylesheet" href="./css/pages/orders.css" />
+    <link rel="stylesheet" href="./css/pages/reviews.css" />
+    <link rel="stylesheet" href="./css/pages/settings.css" />
+</head>
+
+<body class="app-body">
+    <a class="skip-link" href="#app-main">Saltar al contenido</a>
+
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <a class="brand" href="./app.html#dashboard" aria-label="Ir al panel principal">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M14 48V16L50 48V16" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <span class="brand-text-wrap">
+                        <span class="brand-text">NEXO</span>
+                        <span class="brand-subtext">Panel profesional</span>
+                    </span>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Navegación principal">
+                <button class="sidebar-link active" data-route="dashboard" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Resumen</span>
+                </button>
+
+                <button class="sidebar-link" data-route="explore" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Explorar servicios</span>
+                </button>
+
+                <button class="sidebar-link" data-route="my-services" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Mis servicios</span>
+                </button>
+
+                <button class="sidebar-link" data-route="orders" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Órdenes</span>
+                </button>
+
+                <button class="sidebar-link" data-route="messages" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Mensajes</span>
+                </button>
+
+                <button class="sidebar-link" data-route="portfolio" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Portafolio</span>
+                </button>
+
+                <button class="sidebar-link" data-route="reviews" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Reseñas</span>
+                </button>
+
+                <button class="sidebar-link" data-route="profile" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Perfil</span>
+                </button>
+
+                <button class="sidebar-link" data-route="settings" type="button">
+                    <span class="sidebar-link-indicator"></span>
+                    <span>Ajustes</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <article class="sidebar-note">
+                    <span class="sidebar-note-label">Estado de cuenta</span>
+                    <strong id="sidebar-user-role">Estudiante activo</strong>
+                </article>
+            </div>
+        </aside>
+
+        <div class="app-main-shell">
+            <header class="app-topbar">
+                <div class="topbar-left">
+                    <button class="icon-button mobile-sidebar-toggle" id="sidebar-toggle" type="button"
+                        aria-label="Abrir menú lateral">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div class="topbar-title-group">
+                        <span class="topbar-label">Entorno principal</span>
+                        <h1 id="page-title">Resumen general</h1>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <button class="theme-toggle" type="button" aria-label="Cambiar tema" data-theme-toggle>
+                        <span class="theme-toggle-icon"></span>
+                    </button>
+
+                    <div class="profile-menu-wrap">
+                        <button class="profile-menu-trigger" id="profile-menu-trigger" type="button"
+                            aria-label="Abrir menú de usuario">
+                            <span class="avatar-circle" id="topbar-avatar">N</span>
+                            <span class="profile-menu-meta">
+                                <strong id="topbar-name">Usuario</strong>
+                                <small id="topbar-email">correo@dominio.com</small>
+                            </span>
+                        </button>
+
+                        <div class="profile-dropdown" id="profile-dropdown" hidden>
+                            <button class="dropdown-item" type="button" data-route-action="profile">Ver perfil</button>
+                            <button class="dropdown-item" type="button" data-route-action="settings">Ajustes</button>
+                            <button class="dropdown-item danger" type="button" id="logout-button">Cerrar sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main id="app-main" class="app-content">
+                <section class="route-panel active" id="route-dashboard" data-route-panel="dashboard">
+                    <div class="panel-grid">
+                        <article class="kpi-card">
+                            <span class="kpi-label">Servicios activos</span>
+                            <strong class="kpi-value" id="kpi-services">0</strong>
+                            <p class="kpi-meta">Publicaciones actualmente visibles</p>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Órdenes en proceso</span>
+                            <strong class="kpi-value" id="kpi-orders">0</strong>
+                            <p class="kpi-meta">Solicitudes y trabajos en curso</p>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Calificación media</span>
+                            <strong class="kpi-value" id="kpi-rating">0.0</strong>
+                            <p class="kpi-meta">Promedio de reseñas obtenidas</p>
+                        </article>
+
+                        <article class="kpi-card">
+                            <span class="kpi-label">Ingresos estimados</span>
+                            <strong class="kpi-value" id="kpi-earnings">$0</strong>
+                            <p class="kpi-meta">Calculado desde órdenes completadas</p>
+                        </article>
+                    </div>
+
+                    <div class="dashboard-columns">
+                        <section class="content-card large-card">
+                            <div class="card-header">
+                                <div>
+                                    <span class="card-label">Actividad</span>
+                                    <h2>Vista general del perfil</h2>
+                                </div>
+                                <button class="btn btn-secondary" type="button" data-route-action="profile">Editar
+                                    perfil</button>
+                            </div>
+
+                            <div class="profile-summary-grid">
+                                <article class="summary-card">
+                                    <span class="summary-label">Nombre</span>
+                                    <strong id="summary-name">Sin definir</strong>
+                                </article>
+                                <article class="summary-card">
+                                    <span class="summary-label">Usuario</span>
+                                    <strong id="summary-username">@usuario</strong>
+                                </article>
+                                <article class="summary-card">
+                                    <span class="summary-label">Carrera</span>
+                                    <strong id="summary-career">No especificada</strong>
+                                </article>
+                                <article class="summary-card">
+                                    <span class="summary-label">Biografía</span>
+                                    <p id="summary-bio">Completa tu perfil para fortalecer tu presencia profesional.</p>
+                                </article>
+                            </div>
+                        </section>
+
+                        <section class="content-card">
+                            <div class="card-header">
+                                <div>
+                                    <span class="card-label">Siguiente paso</span>
+                                    <h2>Checklist inicial</h2>
+                                </div>
+                            </div>
+
+                            <ul class="checklist" role="list">
+                                <li>Completar perfil profesional</li>
+                                <li>Publicar primer servicio</li>
+                                <li>Agregar portafolio o experiencia</li>
+                                <li>Configurar preferencias visuales</li>
+                            </ul>
+                        </section>
+                    </div>
+                </section>
+
+                <section class="route-panel" id="route-explore" data-route-panel="explore" hidden>
+                    <div class="panel-header">
+                        <div>
+                            <span class="card-label">Descubrimiento</span>
+                            <h2>Explorar servicios</h2>
+                        </div>
+                    </div>
+
+                    <div class="services-toolbar">
+                        <input type="text" id="explore-search"
+                            placeholder="Buscar por servicio, habilidad o categoría" />
+                        <select id="explore-category">
+                            <option value="">Todas las categorías</option>
+                            <option value="Tutorías">Tutorías</option>
+                            <option value="Diseño">Diseño</option>
+                            <option value="Desarrollo">Desarrollo</option>
+                            <option value="Idiomas">Idiomas</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                    </div>
+
+                    <div class="services-grid-app" id="explore-services-list"></div>
+                </section>
+
+                <section class="route-panel" id="route-my-services" data-route-panel="my-services" hidden>
+                    <div class="panel-header with-action">
+                        <div>
+                            <span class="card-label">Gestión</span>
+                            <h2>Mis servicios</h2>
+                        </div>
+                        <button class="btn btn-primary" id="open-service-modal" type="button">Nuevo servicio</button>
+                    </div>
+
+                    <div class="services-grid-app" id="my-services-list"></div>
+                </section>
+
+                <section class="route-panel" id="route-orders" data-route-panel="orders" hidden>
+                    <div class="panel-header">
+                        <div>
+                            <span class="card-label">Operaciones</span>
+                            <h2>Órdenes</h2>
+                        </div>
+                    </div>
+
+                    <div class="order-list" id="orders-list"></div>
+                </section>
+
+                <section class="route-panel" id="route-messages" data-route-panel="messages" hidden>
+                    <div class="panel-header">
+                        <div>
+                            <span class="card-label">Mensajería</span>
+                            <h2>Conversaciones</h2>
+                        </div>
+                    </div>
+
+                    <div class="messages-layout">
+                        <aside class="conversation-list" id="conversation-list"></aside>
+                        <section class="conversation-panel">
+                            <div class="conversation-header">
+                                <strong id="conversation-title">Selecciona una conversación</strong>
+                            </div>
+                            <div class="conversation-messages" id="conversation-messages"></div>
+                            <form class="conversation-form" id="message-form">
+                                <input type="text" id="message-input" placeholder="Escribe un mensaje" />
+                                <button class="btn btn-primary" type="submit">Enviar</button>
+                            </form>
+                        </section>
+                    </div>
+                </section>
+
+                <section class="route-panel" id="route-portfolio" data-route-panel="portfolio" hidden>
+                    <div class="panel-header with-action">
+                        <div>
+                            <span class="card-label">Presentación</span>
+                            <h2>Portafolio</h2>
+                        </div>
+                        <button class="btn btn-secondary" id="add-portfolio-item" type="button">Agregar
+                            elemento</button>
+                    </div>
+
+                    <div class="portfolio-grid" id="portfolio-list"></div>
+                </section>
+
+                <section class="route-panel" id="route-reviews" data-route-panel="reviews" hidden>
+                    <div class="panel-header">
+                        <div>
+                            <span class="card-label">Reputación</span>
+                            <h2>Reseñas</h2>
+                        </div>
+                    </div>
+
+                    <div class="reviews-list" id="reviews-list"></div>
+                </section>
+
+                <section class="route-panel" id="route-profile" data-route-panel="profile" hidden>
+                    <div class="panel-header">
+                        <div>
+                            <span class="card-label">Identidad profesional</span>
+                            <h2>Perfil</h2>
+                        </div>
+                    </div>
+
+                    <form class="profile-form content-card" id="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="profile-full-name">Nombre completo</label>
+                                <input id="profile-full-name" name="full_name" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-username">Usuario</label>
+                                <input id="profile-username" name="username" type="text" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="profile-career">Carrera o especialidad</label>
+                                <input id="profile-career" name="career" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-phone">Teléfono</label>
+                                <input id="profile-phone" name="phone" type="text" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profile-bio">Biografía</label>
+                            <textarea id="profile-bio" name="bio" rows="5"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                    </form>
+                </section>
+
+                <section class="route-panel" id="route-settings" data-route-panel="settings" hidden>
+                    <div class="panel-header">
+                        <div>
+                            <span class="card-label">Preferencias</span>
+                            <h2>Ajustes</h2>
+                        </div>
+                    </div>
+
+                    <div class="settings-grid">
+                        <article class="content-card">
+                            <h3>Apariencia</h3>
+                            <p>Selecciona el tema visual de la plataforma.</p>
+                            <div class="settings-actions">
+                                <button class="btn btn-secondary" type="button" data-set-theme="light">Tema
+                                    claro</button>
+                                <button class="btn btn-primary" type="button" data-set-theme="dark">Tema oscuro</button>
+                            </div>
+                        </article>
+
+                        <article class="content-card">
+                            <h3>Cuenta</h3>
+                            <p>Gestiona sesión, datos básicos y visibilidad general del perfil.</p>
+                            <div class="settings-actions">
+                                <button class="btn btn-secondary" type="button" data-route-action="profile">Editar
+                                    perfil</button>
+                                <button class="btn btn-danger" type="button" id="logout-button-settings">Cerrar
+                                    sesión</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="service-modal" hidden>
+        <div class="modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="card-label">Publicación</span>
+                    <h2>Nuevo servicio</h2>
+                </div>
+                <button class="modal-close" id="close-service-modal" type="button"
+                    aria-label="Cerrar ventana">×</button>
+            </div>
+
+            <form id="service-form" class="form-shell">
+                <div class="form-group">
+                    <label for="service-title">Título del servicio</label>
+                    <input id="service-title" name="title" type="text" placeholder="Ej. Diseño de logotipo profesional"
+                        required />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="service-category">Categoría</label>
+                        <input id="service-category" name="category" type="text"
+                            placeholder="Diseño, Tutorías, Desarrollo..." required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service-price">Precio base</label>
+                        <input id="service-price" name="price" type="number" min="1" step="0.01" placeholder="20"
+                            required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="service-description">Descripción</label>
+                    <textarea id="service-description" name="description" rows="5"
+                        placeholder="Describe el alcance, tiempos y entregables." required></textarea>
+                </div>
+
+                <button class="btn btn-primary btn-block" type="submit">Guardar servicio</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"></script>
+    <script type="module" src="./js/core/theme.js"></script>
+    <script type="module" src="./js/supabase/client.js"></script>
+    <script type="module" src="./js/auth/session.js"></script>
+    <script type="module" src="./js/core/router.js"></script>
+    <script type="module" src="./js/core/app.js"></script>
+    <script type="module" src="./js/pages/dashboard.js"></script>
+    <script type="module" src="./js/pages/explore.js"></script>
+    <script type="module" src="./js/pages/my-services.js"></script>
+    <script type="module" src="./js/pages/orders.js"></script>
+    <script type="module" src="./js/pages/messages.js"></script>
+    <script type="module" src="./js/pages/profile.js"></script>
+    <script type="module" src="./js/pages/portfolio.js"></script>
+    <script type="module" src="./js/pages/settings.js"></script>
+</body>
+
+</html>

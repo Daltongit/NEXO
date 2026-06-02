@@ -1,0 +1,168 @@
+.tooltip-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.tooltip-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.tooltip-box {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 0.7rem);
+    transform: translateX(-50%) translateY(0.35rem);
+    min-width: max-content;
+    max-width: min(18rem, calc(100vw - 2rem));
+    padding: 0.7rem 0.85rem;
+    border-radius: var(--radius-md);
+    background: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-md);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: var(--z-dropdown);
+    transition:
+        opacity var(--transition-fast),
+        transform var(--transition-fast),
+        visibility var(--transition-fast);
+}
+
+.tooltip-box::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 1px);
+    width: 0.8rem;
+    height: 0.8rem;
+    background: var(--color-surface-inverse);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.tooltip-wrap:hover .tooltip-box,
+.tooltip-wrap:focus-within .tooltip-box,
+.tooltip-trigger:hover+.tooltip-box,
+.tooltip-trigger:focus-visible+.tooltip-box,
+.tooltip-trigger[aria-expanded="true"]+.tooltip-box,
+.tooltip-box[data-visible="true"] {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-box[data-placement="top-left"] {
+    left: 0;
+    transform: translateX(0) translateY(0.35rem);
+}
+
+.tooltip-box[data-placement="top-left"]::after {
+    left: 1rem;
+    transform: translateX(0) rotate(45deg);
+}
+
+.tooltip-wrap:hover .tooltip-box[data-placement="top-left"],
+.tooltip-wrap:focus-within .tooltip-box[data-placement="top-left"],
+.tooltip-trigger:hover+.tooltip-box[data-placement="top-left"],
+.tooltip-trigger:focus-visible+.tooltip-box[data-placement="top-left"],
+.tooltip-trigger[aria-expanded="true"]+.tooltip-box[data-placement="top-left"],
+.tooltip-box[data-placement="top-left"][data-visible="true"] {
+    transform: translateX(0) translateY(0);
+}
+
+.tooltip-box[data-placement="top-right"] {
+    left: auto;
+    right: 0;
+    transform: translateX(0) translateY(0.35rem);
+}
+
+.tooltip-box[data-placement="top-right"]::after {
+    left: auto;
+    right: 1rem;
+    transform: translateX(0) rotate(45deg);
+}
+
+.tooltip-wrap:hover .tooltip-box[data-placement="top-right"],
+.tooltip-wrap:focus-within .tooltip-box[data-placement="top-right"],
+.tooltip-trigger:hover+.tooltip-box[data-placement="top-right"],
+.tooltip-trigger:focus-visible+.tooltip-box[data-placement="top-right"],
+.tooltip-trigger[aria-expanded="true"]+.tooltip-box[data-placement="top-right"],
+.tooltip-box[data-placement="top-right"][data-visible="true"] {
+    transform: translateX(0) translateY(0);
+}
+
+.tooltip-box[data-placement="bottom"] {
+    top: calc(100% + 0.7rem);
+    bottom: auto;
+    transform: translateX(-50%) translateY(-0.35rem);
+}
+
+.tooltip-box[data-placement="bottom"]::after {
+    top: auto;
+    bottom: calc(100% - 1px);
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tooltip-wrap:hover .tooltip-box[data-placement="bottom"],
+.tooltip-wrap:focus-within .tooltip-box[data-placement="bottom"],
+.tooltip-trigger:hover+.tooltip-box[data-placement="bottom"],
+.tooltip-trigger:focus-visible+.tooltip-box[data-placement="bottom"],
+.tooltip-trigger[aria-expanded="true"]+.tooltip-box[data-placement="bottom"],
+.tooltip-box[data-placement="bottom"][data-visible="true"] {
+    transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-box[data-multiline="true"] {
+    white-space: normal;
+}
+
+.tooltip-trigger:disabled+.tooltip-box,
+.tooltip-trigger[aria-disabled="true"]+.tooltip-box {
+    display: none;
+}
+
+@media (hover: none) {
+
+    .tooltip-wrap:hover .tooltip-box,
+    .tooltip-trigger:hover+.tooltip-box {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .tooltip-wrap:focus-within .tooltip-box,
+    .tooltip-trigger:focus-visible+.tooltip-box,
+    .tooltip-trigger[aria-expanded="true"]+.tooltip-box,
+    .tooltip-box[data-visible="true"] {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 767px) {
+    .tooltip-box {
+        max-width: min(14rem, calc(100vw - 1.5rem));
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tooltip-box {
+        transition: opacity 0.01ms linear, visibility 0.01ms linear;
+    }
+}

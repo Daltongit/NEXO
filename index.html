@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXO | Servicios estudiantiles</title>
+    <meta name="description"
+        content="Plataforma web para conectar estudiantes universitarios con clientes que necesitan servicios profesionales." />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Urbanist:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/themes.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/components/buttons.css" />
+    <link rel="stylesheet" href="./css/components/cards.css" />
+    <link rel="stylesheet" href="./css/components/topbar.css" />
+    <link rel="stylesheet" href="./css/pages/landing.css" />
+</head>
+
+<body class="landing-body">
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <header class="site-header landing-header">
+        <div class="container header-shell">
+            <a class="brand" href="./index.html" aria-label="Ir al inicio de NEXO">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M14 48V16L50 48V16" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="brand-text-wrap">
+                    <span class="brand-text">NEXO</span>
+                    <span class="brand-subtext">Servicios estudiantiles</span>
+                </span>
+            </a>
+
+            <div class="header-actions">
+                <button class="theme-toggle" type="button" aria-label="Cambiar tema" data-theme-toggle>
+                    <span class="theme-toggle-icon"></span>
+                </button>
+
+                <a class="btn btn-ghost" href="./auth.html#login">Ingresar</a>
+                <a class="btn btn-primary" href="./auth.html#register">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <span class="eyebrow">Plataforma enfocada en talento universitario</span>
+                    <h1>Conecta estudiantes con clientes reales y convierte habilidades en ingresos.</h1>
+                    <p class="hero-description">
+                        NEXO permite que estudiantes universitarios publiquen servicios profesionales,
+                        reciban solicitudes, gestionen encargos y construyan reputación en un entorno
+                        confiable, moderno y seguro.
+                    </p>
+
+                    <div class="hero-cta-row">
+                        <a class="btn btn-primary btn-large" href="./auth.html#register">Comenzar ahora</a>
+                        <a class="btn btn-secondary btn-large" href="#beneficios">Explorar beneficios</a>
+                    </div>
+
+                    <ul class="hero-highlights" role="list">
+                        <li>Perfiles profesionales verificables</li>
+                        <li>Publicación de servicios por categorías</li>
+                        <li>Pagos y comisiones centralizados</li>
+                        <li>Portafolio, reseñas y reputación</li>
+                    </ul>
+                </div>
+
+                <div class="hero-panel glass-card reveal reveal-delay-1" aria-label="Vista previa de la plataforma">
+                    <div class="hero-panel-top">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Entorno activo</span>
+                    </div>
+
+                    <div class="hero-metrics">
+                        <article class="metric-card">
+                            <span class="metric-label">Comisión de plataforma</span>
+                            <strong class="metric-value">10%</strong>
+                        </article>
+                        <article class="metric-card">
+                            <span class="metric-label">Servicios universitarios</span>
+                            <strong class="metric-value">+9 categorías</strong>
+                        </article>
+                        <article class="metric-card">
+                            <span class="metric-label">Experiencia profesional</span>
+                            <strong class="metric-value">Portafolio real</strong>
+                        </article>
+                    </div>
+
+                    <div class="hero-service-card">
+                        <div class="service-card-head">
+                            <div>
+                                <h2>Diseño de logotipo</h2>
+                                <p>Estudiante de Diseño Visual</p>
+                            </div>
+                            <span class="service-price">$20</span>
+                        </div>
+
+                        <div class="service-flow">
+                            <div class="flow-item">
+                                <span class="flow-label">Pago del cliente</span>
+                                <strong>$20</strong>
+                            </div>
+                            <div class="flow-divider"></div>
+                            <div class="flow-item">
+                                <span class="flow-label">Estudiante recibe</span>
+                                <strong>$18</strong>
+                            </div>
+                            <div class="flow-divider"></div>
+                            <div class="flow-item">
+                                <span class="flow-label">Plataforma recibe</span>
+                                <strong>$2</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-mini-list">
+                        <div class="mini-list-row">
+                            <span>Tutorías académicas</span>
+                            <span>Disponible</span>
+                        </div>
+                        <div class="mini-list-row">
+                            <span>Desarrollo web</span>
+                            <span>Disponible</span>
+                        </div>
+                        <div class="mini-list-row">
+                            <span>Edición audiovisual</span>
+                            <span>Disponible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="proposito">
+            <div class="container section-grid-two">
+                <div class="section-copy reveal">
+                    <span class="section-tag">Propósito</span>
+                    <h2>Una plataforma creada para estudiantes que necesitan una primera oportunidad real.</h2>
+                    <p>
+                        Muchos universitarios tienen habilidades valiosas, pero les falta visibilidad,
+                        estructura y confianza para ofrecer servicios a clientes reales. NEXO reúne
+                        estas oportunidades en una plataforma especializada en talento estudiantil.
+                    </p>
+                </div>
+
+                <div class="feature-stack reveal reveal-delay-1">
+                    <article class="info-card">
+                        <h3>Enfoque específico</h3>
+                        <p>No compites en una plataforma genérica; aquí el centro es el estudiante universitario.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Experiencia profesional temprana</h3>
+                        <p>Cada servicio completado fortalece el perfil, la reputación y el portafolio.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Comunidad con propósito</h3>
+                        <p>Clientes, estudiantes y posibles alianzas académicas dentro de un mismo ecosistema.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="beneficios">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-tag">Beneficios</span>
+                    <h2>Diseñada para crecer con estudiantes y con la comunidad.</h2>
+                </div>
+
+                <div class="benefits-grid">
+                    <article class="benefit-card reveal">
+                        <h3>Ingresos adicionales</h3>
+                        <p>Permite monetizar conocimientos y habilidades mientras se estudia.</p>
+                    </article>
+
+                    <article class="benefit-card reveal reveal-delay-1">
+                        <h3>Portafolio profesional</h3>
+                        <p>Cada trabajo completado puede transformarse en evidencia de experiencia.</p>
+                    </article>
+
+                    <article class="benefit-card reveal reveal-delay-2">
+                        <h3>Acceso a clientes</h3>
+                        <p>Los clientes encuentran servicios filtrados por categoría, precio y reputación.</p>
+                    </article>
+
+                    <article class="benefit-card reveal">
+                        <h3>Flujo seguro</h3>
+                        <p>La plataforma centraliza pagos, solicitudes, mensajes y seguimiento.</p>
+                    </article>
+
+                    <article class="benefit-card reveal reveal-delay-1">
+                        <h3>Escalabilidad</h3>
+                        <p>Puede crecer con nuevas categorías, alianzas y herramientas de reputación.</p>
+                    </article>
+
+                    <article class="benefit-card reveal reveal-delay-2">
+                        <h3>Especialización académica</h3>
+                        <p>Hace visible el talento universitario antes del egreso formal.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-accent" id="servicios">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-tag">Categorías</span>
+                    <h2>Servicios que la plataforma puede albergar desde su primera versión.</h2>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-pill reveal">Tutorías académicas</div>
+                    <div class="service-pill reveal reveal-delay-1">Diseño gráfico</div>
+                    <div class="service-pill reveal reveal-delay-2">Desarrollo web</div>
+                    <div class="service-pill reveal">Edición de video</div>
+                    <div class="service-pill reveal reveal-delay-1">Fotografía</div>
+                    <div class="service-pill reveal reveal-delay-2">Traducción</div>
+                    <div class="service-pill reveal">Marketing digital</div>
+                    <div class="service-pill reveal reveal-delay-1">Redacción de documentos</div>
+                    <div class="service-pill reveal reveal-delay-2">Clases de idiomas</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="seguridad">
+            <div class="container section-grid-two">
+                <div class="section-copy reveal">
+                    <span class="section-tag">Seguridad</span>
+                    <h2>Una experiencia enfocada en confianza, identidad y trazabilidad.</h2>
+                    <p>
+                        El sistema contempla autenticación, gestión de perfiles, historial de órdenes,
+                        mensajes entre usuarios y reputación basada en trabajos finalizados para construir
+                        confianza progresiva.
+                    </p>
+                </div>
+
+                <div class="security-panel reveal reveal-delay-1">
+                    <article class="security-item">
+                        <h3>Autenticación</h3>
+                        <p>Registro e inicio de sesión centralizados con Supabase.</p>
+                    </article>
+                    <article class="security-item">
+                        <h3>Perfiles estructurados</h3>
+                        <p>Información clara del estudiante, habilidades, bio y servicios publicados.</p>
+                    </article>
+                    <article class="security-item">
+                        <h3>Órdenes y reseñas</h3>
+                        <p>Cada contratación deja rastro operativo y reputacional.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container cta-shell reveal">
+                <div class="cta-copy">
+                    <span class="section-tag">Comenzar</span>
+                    <h2>Activa tu perfil profesional y publica tus primeros servicios.</h2>
+                    <p>
+                        Regístrate, crea tu perfil y entra al entorno principal para administrar servicios,
+                        mensajes, portafolio, pedidos y configuración.
+                    </p>
+                </div>
+
+                <div class="cta-actions">
+                    <a class="btn btn-primary btn-large" href="./auth.html#register">Crear cuenta</a>
+                    <a class="btn btn-secondary btn-large" href="./auth.html#login">Ya tengo cuenta</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-shell">
+            <div>
+                <strong>NEXO</strong>
+                <p>Plataforma web de servicios estudiantiles.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#proposito">Propósito</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#seguridad">Seguridad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/core/theme.js"></script>
+    <script type="module" src="./js/pages/landing.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+ .form-shell {
+     display: grid;
+     gap: var(--space-5);
+ }
+
+ .form-row {
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     gap: var(--space-4);
+ }
+
+ .form-group {
+     display: grid;
+     gap: var(--space-2);
+ }
+
+ .form-group label {
+     font-size: var(--text-sm);
+     font-weight: 700;
+     color: var(--color-text);
+ }
+
+ .form-group input,
+ .form-group textarea,
+ .form-group select,
+ .services-toolbar input,
+ .services-toolbar select,
+ .conversation-form input {
+     min-height: 3rem;
+     padding: 0.95rem 1rem;
+     border-radius: var(--radius-lg);
+     background: var(--color-bg-elevated);
+     transition:
+         border-color var(--transition-base),
+         background-color var(--transition-base),
+         box-shadow var(--transition-base),
+         transform var(--transition-fast);
+ }
+
+ .form-group textarea {
+     min-height: 8rem;
+     padding-top: 1rem;
+ }
+
+ .form-group input:hover,
+ .form-group textarea:hover,
+ .form-group select:hover,
+ .services-toolbar input:hover,
+ .services-toolbar select:hover,
+ .conversation-form input:hover {
+     border-color: var(--color-border-strong);
+ }
+
+ .form-group input:focus,
+ .form-group textarea:focus,
+ .form-group select:focus,
+ .services-toolbar input:focus,
+ .services-toolbar select:focus,
+ .conversation-form input:focus {
+     background: var(--color-surface);
+ }
+
+ .form-group small {
+     font-size: var(--text-xs);
+     color: var(--color-text-muted);
+ }
+
+ .auth-status {
+     min-height: 1.5rem;
+     font-size: var(--text-sm);
+     font-weight: 600;
+     color: var(--color-text-muted);
+     margin-bottom: var(--space-2);
+ }
+
+ .auth-status.is-error {
+     color: var(--color-danger);
+ }
+
+ .auth-status.is-success {
+     color: var(--color-success);
+ }
+
+ .profile-form {
+     display: grid;
+     gap: var(--space-5);
+ }
+
+ .services-toolbar {
+     display: grid;
+     grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.8fr);
+     gap: var(--space-4);
+     margin-bottom: var(--space-6);
+     padding: var(--space-4);
+     border-radius: var(--radius-xl);
+ }
+
+ .conversation-form {
+     display: grid;
+     grid-template-columns: minmax(0, 1fr) auto;
+     gap: var(--space-3);
+     padding-top: var(--space-4);
+     border-top: 1px solid var(--color-divider);
+ }
+
+ .form-inline-note {
+     color: var(--color-text-muted);
+     font-size: var(--text-xs);
+ }
+
+ @media (max-width: 767px) {
+
+     .form-row,
+     .services-toolbar,
+     .conversation-form {
+         grid-template-columns: 1fr;
+     }
+ }

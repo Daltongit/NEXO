@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXO | Acceso</title>
+    <meta name="description"
+        content="Accede o crea tu cuenta en NEXO para ofrecer y contratar servicios estudiantiles." />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Urbanist:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/themes.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/components/buttons.css" />
+    <link rel="stylesheet" href="./css/components/forms.css" />
+    <link rel="stylesheet" href="./css/components/cards.css" />
+    <link rel="stylesheet" href="./css/pages/auth.css" />
+</head>
+
+<body class="auth-body">
+    <a class="skip-link" href="#auth-main">Saltar al contenido</a>
+
+    <main id="auth-main" class="auth-layout">
+        <section class="auth-showcase">
+            <a class="brand auth-brand" href="./index.html" aria-label="Ir al inicio de NEXO">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M14 48V16L50 48V16" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="brand-text-wrap">
+                    <span class="brand-text">NEXO</span>
+                    <span class="brand-subtext">Servicios estudiantiles</span>
+                </span>
+            </a>
+
+            <div class="auth-showcase-content reveal">
+                <span class="section-tag">Acceso profesional</span>
+                <h1>Tu cuenta te abre el entorno donde gestionas servicios, clientes y reputación.</h1>
+                <p>
+                    Crea tu perfil, publica servicios, conversa con clientes y administra pedidos
+                    desde una sola interfaz orientada a estudiantes universitarios.
+                </p>
+
+                <div class="auth-benefits-list">
+                    <article class="auth-mini-card">
+                        <h2>Perfil profesional</h2>
+                        <p>Bio, habilidades, carrera, portafolio y experiencia.</p>
+                    </article>
+                    <article class="auth-mini-card">
+                        <h2>Gestión operativa</h2>
+                        <p>Órdenes activas, estado de servicios y seguimiento.</p>
+                    </article>
+                    <article class="auth-mini-card">
+                        <h2>Mensajería integrada</h2>
+                        <p>Comunicación directa entre cliente y estudiante.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-panel">
+            <div class="auth-topbar">
+                <button class="theme-toggle" type="button" aria-label="Cambiar tema" data-theme-toggle>
+                    <span class="theme-toggle-icon"></span>
+                </button>
+                <a class="back-link" href="./index.html">Volver al inicio</a>
+            </div>
+
+            <div class="auth-card reveal reveal-delay-1">
+                <div class="auth-tabs" role="tablist" aria-label="Opciones de autenticación">
+                    <button class="auth-tab active" id="tab-login" data-auth-tab="login" role="tab"
+                        aria-selected="true">
+                        Iniciar sesión
+                    </button>
+                    <button class="auth-tab" id="tab-register" data-auth-tab="register" role="tab"
+                        aria-selected="false">
+                        Crear cuenta
+                    </button>
+                </div>
+
+                <div class="auth-status" id="auth-status" aria-live="polite"></div>
+
+                <section class="auth-form-panel active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+                    <div class="panel-heading">
+                        <h2>Bienvenido nuevamente</h2>
+                        <p>Ingresa tus credenciales para abrir tu panel profesional.</p>
+                    </div>
+
+                    <form id="login-form" class="form-shell" novalidate>
+                        <div class="form-group">
+                            <label for="login-email">Correo electrónico</label>
+                            <input id="login-email" name="email" type="email" placeholder="tu@correo.com" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Contraseña</label>
+                            <input id="login-password" name="password" type="password" placeholder="••••••••"
+                                required />
+                        </div>
+
+                        <button class="btn btn-primary btn-block" type="submit">Ingresar a NEXO</button>
+                    </form>
+
+                    <div class="auth-footer-note">
+                        <span>No tienes cuenta.</span>
+                        <button type="button" class="text-link" data-switch-auth="register">Crear cuenta</button>
+                    </div>
+                </section>
+
+                <section class="auth-form-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register"
+                    hidden>
+                    <div class="panel-heading">
+                        <h2>Crea tu cuenta profesional</h2>
+                        <p>Registra tus datos para empezar a publicar servicios dentro de la plataforma.</p>
+                    </div>
+
+                    <form id="register-form" class="form-shell" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-fullname">Nombre completo</label>
+                                <input id="register-fullname" name="full_name" type="text"
+                                    placeholder="Nombre y apellido" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-username">Usuario</label>
+                                <input id="register-username" name="username" type="text" placeholder="usuario_nexo"
+                                    required />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-email">Correo electrónico</label>
+                                <input id="register-email" name="email" type="email" placeholder="tu@correo.com"
+                                    required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-career">Carrera o especialidad</label>
+                                <input id="register-career" name="career" type="text"
+                                    placeholder="Diseño, Software, Idiomas..." />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-password">Contraseña</label>
+                                <input id="register-password" name="password" type="password"
+                                    placeholder="Mínimo 8 caracteres" required minlength="8" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-password-confirm">Confirmar contraseña</label>
+                                <input id="register-password-confirm" name="password_confirm" type="password"
+                                    placeholder="Repite la contraseña" required minlength="8" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-bio">Presentación breve</label>
+                            <textarea id="register-bio" name="bio" rows="4"
+                                placeholder="Describe brevemente tus habilidades, enfoque y servicios."></textarea>
+                        </div>
+
+                        <button class="btn btn-primary btn-block" type="submit">Crear cuenta</button>
+                    </form>
+
+                    <div class="auth-footer-note">
+                        <span>Ya tienes cuenta.</span>
+                        <button type="button" class="text-link" data-switch-auth="login">Iniciar sesión</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="./js/core/theme.js"></script>
+    <script type="module" src="./js/supabase/client.js"></script>
+    <script type="module" src="./js/auth/session.js"></script>
+    <script type="module" src="./js/auth/login.js"></script>
+    <script type="module" src="./js/auth/register.js"></script>
+</body>
+
+</html>

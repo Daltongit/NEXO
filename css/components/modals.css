@@ -1,0 +1,47 @@
+ .modal-backdrop {
+     position: fixed;
+     inset: 0;
+     z-index: var(--z-modal);
+     display: grid;
+     place-items: center;
+     padding: var(--space-4);
+     background: rgba(10, 8, 7, 0.6);
+     backdrop-filter: blur(var(--blur-sm));
+     -webkit-backdrop-filter: blur(var(--blur-sm));
+ }
+
+ .modal-card {
+     width: min(100%, 42rem);
+     padding: var(--space-6);
+     border-radius: var(--radius-2xl);
+     animation: fadeUp 320ms ease forwards;
+ }
+
+ .modal-header {
+     display: flex;
+     align-items: flex-start;
+     justify-content: space-between;
+     gap: var(--space-4);
+     margin-bottom: var(--space-5);
+ }
+
+ .modal-close {
+     width: 2.75rem;
+     height: 2.75rem;
+     display: inline-grid;
+     place-items: center;
+     border-radius: 50%;
+     background: var(--color-surface-2);
+     font-size: 1.4rem;
+     line-height: 1;
+     transition:
+         transform var(--transition-fast),
+         background-color var(--transition-fast);
+ }
+
+ .modal-close:hover,
+ .modal-close:focus-visible {
+     transform: rotate(90deg);
+     background: var(--color-primary-soft);
+     color: var(--color-primary);
+ }

@@ -1,0 +1,36 @@
+ .services-grid-app {
+     display: grid;
+     grid-template-columns: repeat(3, minmax(0, 1fr));
+     gap: var(--space-4);
+ }
+
+ .service-card-item .service-price {
+     align-self: start;
+ }
+
+ .service-card-meta {
+     color: var(--color-text-muted);
+     font-size: var(--text-sm);
+ }
+
+ .service-card-footer {
+     padding-top: var(--space-2);
+     border-top: 1px solid var(--color-divider);
+ }
+
+ @media (max-width: 1200px) {
+     .services-grid-app {
+         grid-template-columns: repeat(2, minmax(0, 1fr));
+     }
+ }
+
+ @media (max-width: 767px) {
+     .services-grid-app {
+         grid-template-columns: 1fr;
+     }
+
+     .service-card-footer {
+         flex-direction: column;
+         align-items: stretch;
+     }
+ }

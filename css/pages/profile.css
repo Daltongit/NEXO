@@ -1,0 +1,17 @@
+ .profile-form {
+     max-width: 100%;
+ }
+
+ .profile-form .form-group textarea {
+     min-height: 10rem;
+ }
+
+ .profile-form .btn {
+     justify-self: start;
+ }
+
+ @media (max-width: 767px) {
+     .profile-form .btn {
+         justify-self: stretch;
+     }
+ }

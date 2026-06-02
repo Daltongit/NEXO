@@ -1,0 +1,58 @@
+ .panel-grid {
+     display: grid;
+     grid-template-columns: repeat(4, minmax(0, 1fr));
+     gap: var(--space-4);
+ }
+
+ .dashboard-columns {
+     display: grid;
+     grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+     gap: var(--space-4);
+ }
+
+ .profile-summary-grid {
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     gap: var(--space-4);
+ }
+
+ .checklist {
+     display: grid;
+     gap: var(--space-3);
+ }
+
+ .checklist li {
+     position: relative;
+     padding-left: 1.35rem;
+     color: var(--color-text-muted);
+ }
+
+ .checklist li::before {
+     content: "";
+     position: absolute;
+     left: 0;
+     top: 0.62rem;
+     width: 0.55rem;
+     height: 0.55rem;
+     border-radius: 50%;
+     background: var(--color-primary);
+     box-shadow: 0 0 12px rgba(255, 142, 43, 0.35);
+ }
+
+ @media (max-width: 1200px) {
+     .panel-grid {
+         grid-template-columns: repeat(2, minmax(0, 1fr));
+     }
+
+     .dashboard-columns {
+         grid-template-columns: 1fr;
+     }
+ }
+
+ @media (max-width: 767px) {
+
+     .panel-grid,
+     .profile-summary-grid {
+         grid-template-columns: 1fr;
+     }
+ }

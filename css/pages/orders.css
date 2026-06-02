@@ -1,0 +1,31 @@
+ .order-list {
+     display: grid;
+     gap: var(--space-4);
+ }
+
+ .order-card {
+     display: grid;
+     gap: var(--space-4);
+ }
+
+ .order-card-top,
+ .order-card-bottom {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: var(--space-3);
+     flex-wrap: wrap;
+ }
+
+ .order-meta {
+     display: flex;
+     gap: var(--space-4);
+     flex-wrap: wrap;
+     color: var(--color-text-muted);
+     font-size: var(--text-sm);
+ }
+
+ .order-card-bottom {
+     padding-top: var(--space-3);
+     border-top: 1px solid var(--color-divider);
+ }
