@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NEXO | Acceso</title>
-  <meta
-    name="description"
-    content="Ingresa o crea tu cuenta en NEXO para publicar y contratar servicios estudiantiles."
-  />
+  <meta name="description" content="Ingresa o crea tu cuenta en NEXO." />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,15 +19,15 @@
   <link rel="stylesheet" href="./css/themes.css" />
   <link rel="stylesheet" href="./css/pages/auth.css" />
 </head>
-<body class="auth-zero">
+<body class="auth-minimal-x">
   <a class="skip-link" href="#auth-main">Saltar al contenido</a>
 
-  <main id="auth-main" class="auth-scene">
-    <div class="auth-scene-bg auth-bg-layer-1"></div>
-    <div class="auth-scene-bg auth-bg-layer-2"></div>
-    <div class="auth-scene-grid"></div>
+  <main id="auth-main" class="auth-x-shell">
+    <div class="auth-x-bg auth-x-bg-a"></div>
+    <div class="auth-x-bg auth-x-bg-b"></div>
+    <div class="auth-x-grid"></div>
 
-    <header class="auth-header">
+    <header class="auth-x-header">
       <a class="brand auth-brand" href="./index.html" aria-label="Volver al inicio">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 64 64" fill="none">
@@ -49,7 +46,7 @@
         </span>
       </a>
 
-      <div class="auth-header-actions">
+      <div class="auth-x-actions">
         <button
           class="theme-toggle auth-theme-toggle"
           type="button"
@@ -59,59 +56,25 @@
           <span class="theme-toggle-icon"></span>
         </button>
 
-        <a class="auth-back-link" href="./index.html">Volver al inicio</a>
+        <a class="auth-x-back" href="./index.html">Volver</a>
       </div>
     </header>
 
-    <section class="auth-center-stage">
-      <aside class="auth-side-quote">
-        <span class="auth-side-tag">Acceso a tu espacio</span>
-        <h1>Entra, publica tus servicios y mueve tu perfil con más alcance.</h1>
-        <p>
-          Un acceso visual, directo y moderno para estudiantes que quieren mostrar lo
-          que saben hacer y empezar a generar oportunidades reales.
-        </p>
+    <section class="auth-x-stage">
+      <div class="auth-x-orb auth-x-orb-a" aria-hidden="true"></div>
+      <div class="auth-x-orb auth-x-orb-b" aria-hidden="true"></div>
+      <div class="auth-x-orb auth-x-orb-c" aria-hidden="true"></div>
 
-        <div class="auth-side-points">
-          <article class="side-point">
-            <span class="side-point-line"></span>
-            <div>
-              <strong>Publica rápido</strong>
-              <p>Sube servicios y presenta tu perfil sin fricción.</p>
-            </div>
-          </article>
-
-          <article class="side-point">
-            <span class="side-point-line"></span>
-            <div>
-              <strong>Conecta mejor</strong>
-              <p>Mensajes, visibilidad y contratación en un mismo lugar.</p>
-            </div>
-          </article>
-
-          <article class="side-point">
-            <span class="side-point-line"></span>
-            <div>
-              <strong>Hazlo tuyo</strong>
-              <p>Una entrada con más identidad y menos apariencia genérica.</p>
-            </div>
-          </article>
-        </div>
-      </aside>
-
-      <section class="auth-card-stage">
-        <div class="auth-floating auth-floating-a" aria-hidden="true"></div>
-        <div class="auth-floating auth-floating-b" aria-hidden="true"></div>
-
-        <div class="auth-main-card">
-          <div class="auth-card-topline">
-            <div class="auth-card-dot"></div>
-            <span>Acceso NEXO</span>
+      <div class="auth-x-card">
+        <div class="auth-x-top">
+          <div class="auth-x-badge">
+            <span class="auth-x-badge-dot"></span>
+            <span>NEXO</span>
           </div>
 
-          <div class="auth-switch" role="tablist" aria-label="Selecciona iniciar sesión o crear cuenta">
+          <div class="auth-x-toggle" role="tablist" aria-label="Autenticación">
             <button
-              class="auth-switch-btn active"
+              class="auth-x-toggle-btn active"
               id="tab-login"
               data-auth-tab="login"
               role="tab"
@@ -122,7 +85,7 @@
             </button>
 
             <button
-              class="auth-switch-btn"
+              class="auth-x-toggle-btn"
               id="tab-register"
               data-auth-tab="register"
               role="tab"
@@ -132,309 +95,287 @@
               Crear cuenta
             </button>
           </div>
-
-          <div class="auth-status" id="auth-status" aria-live="polite"></div>
-
-          <section
-            class="auth-panel active"
-            id="panel-login"
-            role="tabpanel"
-            aria-labelledby="tab-login"
-          >
-            <div class="panel-head">
-              <span class="panel-mini-label">Inicio</span>
-              <h2>Bienvenido de nuevo</h2>
-              <p>Ingresa a tu cuenta para seguir gestionando tus servicios y contactos.</p>
-            </div>
-
-            <form id="login-form" class="auth-form auth-form-login" novalidate>
-              <label class="zero-field zero-field-wide">
-                <span class="zero-label">Correo electrónico</span>
-                <span class="zero-input-wrap">
-                  <span class="zero-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                      <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                  <input
-                    id="login-email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    placeholder="tu@correo.com"
-                    required
-                  />
-                  <span class="zero-focus-line"></span>
-                </span>
-              </label>
-
-              <label class="zero-field zero-field-wide">
-                <span class="zero-label">Contraseña</span>
-                <span class="zero-input-wrap password-wrap">
-                  <span class="zero-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                      <rect x="5" y="10" width="14" height="10" rx="3" stroke="currentColor" stroke-width="1.8"/>
-                    </svg>
-                  </span>
-                  <input
-                    id="login-password"
-                    name="password"
-                    type="password"
-                    autocomplete="current-password"
-                    placeholder="Escribe tu contraseña"
-                    required
-                  />
-                  <button
-                    class="zero-password-toggle"
-                    type="button"
-                    data-toggle-password="login-password"
-                    aria-label="Mostrar contraseña"
-                  >
-                    <span class="toggle-eye">
-                      <svg class="eye-open" viewBox="0 0 24 24" fill="none">
-                        <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.8"/>
-                      </svg>
-                      <svg class="eye-off" viewBox="0 0 24 24" fill="none">
-                        <path d="m3 3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M10.7 5.2A12 12 0 0 1 12 5c6.4 0 10 7 10 7a16.6 16.6 0 0 1-3.4 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6.2 6.2C3.7 8 2 12 2 12s3.6 6 10 6a10.5 10.5 0 0 0 5.2-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                  </button>
-                  <span class="zero-focus-line"></span>
-                </span>
-              </label>
-
-              <div class="auth-form-actions">
-                <button class="zero-primary-btn" type="submit">
-                  <span>Entrar a NEXO</span>
-                </button>
-
-                <button class="zero-link-btn" type="button" data-switch-auth="register">
-                  Crear cuenta
-                </button>
-              </div>
-            </form>
-          </section>
-
-          <section
-            class="auth-panel"
-            id="panel-register"
-            role="tabpanel"
-            aria-labelledby="tab-register"
-            hidden
-          >
-            <div class="panel-head">
-              <span class="panel-mini-label">Registro</span>
-              <h2>Crea tu cuenta</h2>
-              <p>Completa lo necesario para empezar a publicar y recibir solicitudes.</p>
-            </div>
-
-            <form id="register-form" class="auth-form auth-form-register" novalidate>
-              <label class="zero-field">
-                <span class="zero-label">Nombre completo</span>
-                <span class="zero-input-wrap">
-                  <span class="zero-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/>
-                      <path d="M5 19c1.5-3 4-4.5 7-4.5S17.5 16 19 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    </svg>
-                  </span>
-                  <input
-                    id="register-fullname"
-                    name="full_name"
-                    type="text"
-                    autocomplete="name"
-                    placeholder="Nombre y apellido"
-                    required
-                  />
-                  <span class="zero-focus-line"></span>
-                </span>
-              </label>
-
-              <label class="zero-field">
-                <span class="zero-label">Usuario</span>
-                <span class="zero-input-wrap">
-                  <span class="zero-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M4 18c2.2-2 4.6-3 8-3s5.8 1 8 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                      <circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.8"/>
-                    </svg>
-                  </span>
-                  <input
-                    id="register-username"
-                    name="username"
-                    type="text"
-                    autocomplete="username"
-                    placeholder="usuario_nexo"
-                    required
-                  />
-                  <span class="zero-focus-line"></span>
-                </span>
-              </label>
-
-              <label class="zero-field">
-                <span class="zero-label">Correo electrónico</span>
-                <span class="zero-input-wrap">
-                  <span class="zero-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                      <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                  <input
-                    id="register-email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    placeholder="tu@correo.com"
-                    required
-                  />
-                  <span class="zero-focus-line"></span>
-                </span>
-              </label>
-
-              <label class="zero-field">
-                <span class="zero-label">Fecha de nacimiento</span>
-                <span class="zero-input-wrap">
-                  <span class="zero-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <rect x="4" y="5" width="16" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
-                      <path d="M8 3v4M16 3v4M4 9h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    </svg>
-                  </span>
-                  <input
-                    id="register-birthdate"
-                    name="birthdate"
-                    type="date"
-                    required
-                  />
-                  <span class="zero-focus-line"></span>
-                </span>
-              </label>
-
-              <div class="zero-chip-block">
-                <span class="zero-label">Carrera o especialidad</span>
-                <div class="zero-chip-grid" data-choice-group="career">
-                  <button type="button" class="zero-chip" data-choice-value="Desarrollo de software">Software</button>
-                  <button type="button" class="zero-chip" data-choice-value="Diseño gráfico">Diseño</button>
-                  <button type="button" class="zero-chip" data-choice-value="Marketing digital">Marketing</button>
-                  <button type="button" class="zero-chip" data-choice-value="Idiomas">Idiomas</button>
-                  <button type="button" class="zero-chip" data-choice-value="Fotografía">Fotografía</button>
-                  <button type="button" class="zero-chip" data-choice-value="Tutorías académicas">Tutorías</button>
-                </div>
-                <input type="hidden" id="register-career" name="career" required />
-              </div>
-
-              <div class="zero-chip-block">
-                <span class="zero-label">Objetivo principal</span>
-                <div class="zero-chip-grid" data-choice-group="interest">
-                  <button type="button" class="zero-chip" data-choice-value="Generar ingresos">Ingresos</button>
-                  <button type="button" class="zero-chip" data-choice-value="Ganar experiencia">Experiencia</button>
-                  <button type="button" class="zero-chip" data-choice-value="Crear portafolio">Portafolio</button>
-                  <button type="button" class="zero-chip" data-choice-value="Conseguir clientes">Clientes</button>
-                  <button type="button" class="zero-chip" data-choice-value="Aprender trabajando">Aprender</button>
-                  <button type="button" class="zero-chip" data-choice-value="Visibilidad profesional">Visibilidad</button>
-                </div>
-                <input type="hidden" id="register-interest" name="interest" required />
-              </div>
-
-              <label class="zero-field">
-                <span class="zero-label">Contraseña</span>
-                <span class="zero-input-wrap password-wrap">
-                  <span class="zero-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                      <rect x="5" y="10" width="14" height="10" rx="3" stroke="currentColor" stroke-width="1.8"/>
-                    </svg>
-                  </span>
-                  <input
-                    id="register-password"
-                    name="password"
-                    type="password"
-                    autocomplete="new-password"
-                    placeholder="Mínimo 8 caracteres"
-                    minlength="8"
-                    required
-                  />
-                  <button
-                    class="zero-password-toggle"
-                    type="button"
-                    data-toggle-password="register-password"
-                    aria-label="Mostrar contraseña"
-                  >
-                    <span class="toggle-eye">
-                      <svg class="eye-open" viewBox="0 0 24 24" fill="none">
-                        <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.8"/>
-                      </svg>
-                      <svg class="eye-off" viewBox="0 0 24 24" fill="none">
-                        <path d="m3 3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M10.7 5.2A12 12 0 0 1 12 5c6.4 0 10 7 10 7a16.6 16.6 0 0 1-3.4 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6.2 6.2C3.7 8 2 12 2 12s3.6 6 10 6a10.5 10.5 0 0 0 5.2-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                  </button>
-                  <span class="zero-focus-line"></span>
-                </span>
-              </label>
-
-              <label class="zero-field">
-                <span class="zero-label">Confirmar contraseña</span>
-                <span class="zero-input-wrap password-wrap">
-                  <span class="zero-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                      <rect x="5" y="10" width="14" height="10" rx="3" stroke="currentColor" stroke-width="1.8"/>
-                    </svg>
-                  </span>
-                  <input
-                    id="register-password-confirm"
-                    name="password_confirm"
-                    type="password"
-                    autocomplete="new-password"
-                    placeholder="Repite tu contraseña"
-                    minlength="8"
-                    required
-                  />
-                  <button
-                    class="zero-password-toggle"
-                    type="button"
-                    data-toggle-password="register-password-confirm"
-                    aria-label="Mostrar contraseña"
-                  >
-                    <span class="toggle-eye">
-                      <svg class="eye-open" viewBox="0 0 24 24" fill="none">
-                        <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.8"/>
-                      </svg>
-                      <svg class="eye-off" viewBox="0 0 24 24" fill="none">
-                        <path d="m3 3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M10.7 5.2A12 12 0 0 1 12 5c6.4 0 10 7 10 7a16.6 16.6 0 0 1-3.4 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6.2 6.2C3.7 8 2 12 2 12s3.6 6 10 6a10.5 10.5 0 0 0 5.2-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                  </button>
-                  <span class="zero-focus-line"></span>
-                </span>
-              </label>
-
-              <div class="auth-form-actions auth-form-actions-full">
-                <button class="zero-primary-btn" type="submit">
-                  <span>Crear cuenta</span>
-                </button>
-
-                <button class="zero-link-btn" type="button" data-switch-auth="login">
-                  Ya tengo cuenta
-                </button>
-              </div>
-            </form>
-          </section>
         </div>
-      </section>
+
+        <div class="auth-status" id="auth-status" aria-live="polite"></div>
+
+        <section
+          class="auth-x-panel active"
+          id="panel-login"
+          role="tabpanel"
+          aria-labelledby="tab-login"
+        >
+          <div class="auth-x-head">
+            <h1>Entrar</h1>
+          </div>
+
+          <form id="login-form" class="auth-x-form auth-x-login" novalidate>
+            <label class="x-field x-field-full">
+              <span class="x-input-shell">
+                <span class="x-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <input
+                  id="login-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="Correo electrónico"
+                  required
+                />
+                <span class="x-input-line"></span>
+              </span>
+            </label>
+
+            <label class="x-field x-field-full">
+              <span class="x-input-shell x-password-shell">
+                <span class="x-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <rect x="5" y="10" width="14" height="10" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                  </svg>
+                </span>
+                <input
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Contraseña"
+                  required
+                />
+                <button
+                  class="x-pass-toggle"
+                  type="button"
+                  data-toggle-password="login-password"
+                  aria-label="Mostrar contraseña"
+                >
+                  <span class="x-pass-eye">
+                    <svg class="eye-open" viewBox="0 0 24 24" fill="none">
+                      <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                    <svg class="eye-off" viewBox="0 0 24 24" fill="none">
+                      <path d="m3 3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M10.7 5.2A12 12 0 0 1 12 5c6.4 0 10 7 10 7a16.6 16.6 0 0 1-3.4 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M6.2 6.2C3.7 8 2 12 2 12s3.6 6 10 6a10.5 10.5 0 0 0 5.2-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <span class="x-input-line"></span>
+              </span>
+            </label>
+
+            <button class="x-submit" type="submit">Entrar</button>
+
+            <button class="x-switch-link" type="button" data-switch-auth="register">
+              Crear cuenta
+            </button>
+          </form>
+        </section>
+
+        <section
+          class="auth-x-panel"
+          id="panel-register"
+          role="tabpanel"
+          aria-labelledby="tab-register"
+          hidden
+        >
+          <div class="auth-x-head">
+            <h1>Crear cuenta</h1>
+          </div>
+
+          <form id="register-form" class="auth-x-form auth-x-register" novalidate>
+            <label class="x-field">
+              <span class="x-input-shell">
+                <span class="x-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M5 19c1.5-3 4-4.5 7-4.5S17.5 16 19 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <input
+                  id="register-fullname"
+                  name="full_name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Nombre completo"
+                  required
+                />
+                <span class="x-input-line"></span>
+              </span>
+            </label>
+
+            <label class="x-field">
+              <span class="x-input-shell">
+                <span class="x-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 18c2.2-2 4.6-3 8-3s5.8 1 8 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.8"/>
+                  </svg>
+                </span>
+                <input
+                  id="register-username"
+                  name="username"
+                  type="text"
+                  autocomplete="username"
+                  placeholder="Usuario"
+                  required
+                />
+                <span class="x-input-line"></span>
+              </span>
+            </label>
+
+            <label class="x-field">
+              <span class="x-input-shell">
+                <span class="x-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <input
+                  id="register-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="Correo"
+                  required
+                />
+                <span class="x-input-line"></span>
+              </span>
+            </label>
+
+            <label class="x-field">
+              <span class="x-input-shell">
+                <span class="x-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="4" y="5" width="16" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M8 3v4M16 3v4M4 9h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <input
+                  id="register-birthdate"
+                  name="birthdate"
+                  type="date"
+                  required
+                />
+                <span class="x-input-line"></span>
+              </span>
+            </label>
+
+            <div class="x-chip-block">
+              <div class="x-chip-grid" data-choice-group="career">
+                <button type="button" class="x-chip" data-choice-value="Desarrollo de software">Software</button>
+                <button type="button" class="x-chip" data-choice-value="Diseño gráfico">Diseño</button>
+                <button type="button" class="x-chip" data-choice-value="Marketing digital">Marketing</button>
+                <button type="button" class="x-chip" data-choice-value="Idiomas">Idiomas</button>
+                <button type="button" class="x-chip" data-choice-value="Fotografía">Foto</button>
+                <button type="button" class="x-chip" data-choice-value="Tutorías académicas">Tutorías</button>
+              </div>
+              <input type="hidden" id="register-career" name="career" required />
+            </div>
+
+            <div class="x-chip-block">
+              <div class="x-chip-grid" data-choice-group="interest">
+                <button type="button" class="x-chip" data-choice-value="Generar ingresos">Ingresos</button>
+                <button type="button" class="x-chip" data-choice-value="Ganar experiencia">Experiencia</button>
+                <button type="button" class="x-chip" data-choice-value="Crear portafolio">Portafolio</button>
+                <button type="button" class="x-chip" data-choice-value="Conseguir clientes">Clientes</button>
+                <button type="button" class="x-chip" data-choice-value="Aprender trabajando">Aprender</button>
+                <button type="button" class="x-chip" data-choice-value="Visibilidad profesional">Visibilidad</button>
+              </div>
+              <input type="hidden" id="register-interest" name="interest" required />
+            </div>
+
+            <label class="x-field">
+              <span class="x-input-shell x-password-shell">
+                <span class="x-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <rect x="5" y="10" width="14" height="10" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                  </svg>
+                </span>
+                <input
+                  id="register-password"
+                  name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Contraseña"
+                  minlength="8"
+                  required
+                />
+                <button
+                  class="x-pass-toggle"
+                  type="button"
+                  data-toggle-password="register-password"
+                  aria-label="Mostrar contraseña"
+                >
+                  <span class="x-pass-eye">
+                    <svg class="eye-open" viewBox="0 0 24 24" fill="none">
+                      <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                    <svg class="eye-off" viewBox="0 0 24 24" fill="none">
+                      <path d="m3 3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M10.7 5.2A12 12 0 0 1 12 5c6.4 0 10 7 10 7a16.6 16.6 0 0 1-3.4 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M6.2 6.2C3.7 8 2 12 2 12s3.6 6 10 6a10.5 10.5 0 0 0 5.2-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <span class="x-input-line"></span>
+              </span>
+            </label>
+
+            <label class="x-field">
+              <span class="x-input-shell x-password-shell">
+                <span class="x-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <rect x="5" y="10" width="14" height="10" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                  </svg>
+                </span>
+                <input
+                  id="register-password-confirm"
+                  name="password_confirm"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Confirmar contraseña"
+                  minlength="8"
+                  required
+                />
+                <button
+                  class="x-pass-toggle"
+                  type="button"
+                  data-toggle-password="register-password-confirm"
+                  aria-label="Mostrar contraseña"
+                >
+                  <span class="x-pass-eye">
+                    <svg class="eye-open" viewBox="0 0 24 24" fill="none">
+                      <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                    <svg class="eye-off" viewBox="0 0 24 24" fill="none">
+                      <path d="m3 3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M10.7 5.2A12 12 0 0 1 12 5c6.4 0 10 7 10 7a16.6 16.6 0 0 1-3.4 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M6.2 6.2C3.7 8 2 12 2 12s3.6 6 10 6a10.5 10.5 0 0 0 5.2-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <span class="x-input-line"></span>
+              </span>
+            </label>
+
+            <button class="x-submit x-submit-full" type="submit">Crear cuenta</button>
+
+            <button class="x-switch-link" type="button" data-switch-auth="login">
+              Ya tengo cuenta
+            </button>
+          </form>
+        </section>
+      </div>
     </section>
   </main>
 
