@@ -35,17 +35,17 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #050506;
-  --color-surface: #0d0d10;
-  --color-surface-2: #121216;
-  --color-surface-3: #16161b;
-  --color-surface-offset: #1b1b21;
+  --color-bg: #070708;
+  --color-surface: #111114;
+  --color-surface-2: #17171b;
+  --color-surface-3: #1d1d22;
+  --color-surface-offset: #24242a;
   --color-border: rgba(255, 132, 32, 0.16);
   --color-divider: rgba(255, 132, 32, 0.08);
 
   --color-text: #fff3eb;
-  --color-text-muted: #c9b4a6;
-  --color-text-faint: #8e7768;
+  --color-text-muted: #ccb7a8;
+  --color-text-faint: #8b776a;
   --color-text-inverse: #130c07;
 
   --color-primary: #ff8a1f;
@@ -64,9 +64,9 @@
 
   --gradient-primary: linear-gradient(135deg, #ffb14b 0%, #ff8a1f 44%, #ff6200 100%);
   --gradient-hero:
-    radial-gradient(circle at 10% 12%, rgba(255, 120, 20, 0.15), transparent 28%),
-    radial-gradient(circle at 90% 10%, rgba(255, 102, 0, 0.14), transparent 20%),
-    radial-gradient(circle at 84% 86%, rgba(255, 138, 31, 0.09), transparent 18%);
+    radial-gradient(circle at 10% 14%, rgba(255, 120, 20, 0.14), transparent 28%),
+    radial-gradient(circle at 92% 12%, rgba(255, 102, 0, 0.12), transparent 18%),
+    radial-gradient(circle at 84% 86%, rgba(255, 138, 31, 0.08), transparent 18%);
 }
 
 html,
@@ -172,7 +172,7 @@ body {
   min-height: 100dvh;
   overflow: clip;
   background:
-    linear-gradient(180deg, rgba(255, 138, 31, 0.015), transparent 22%),
+    linear-gradient(180deg, rgba(255, 138, 31, 0.018), transparent 22%),
     var(--color-bg);
 }
 
@@ -189,8 +189,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--color-bg);
+  background: color-mix(in oklab, var(--color-bg) 70%, var(--color-surface) 30%);
   border-bottom: 1px solid var(--color-divider);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .site-header-inner {
@@ -260,7 +261,7 @@ body {
 }
 
 .btn-secondary {
-  background: var(--color-surface);
+  background: var(--color-surface-2);
   color: var(--color-text);
   border-color: var(--color-border);
 }
@@ -269,9 +270,9 @@ body {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   box-shadow:
-    0 0 0 1px rgba(255, 132, 32, 0.06),
-    0 20px 60px rgba(0, 0, 0, 0.32),
-    0 0 32px rgba(255, 132, 32, 0.08);
+    0 0 0 1px rgba(255, 132, 32, 0.05),
+    0 24px 60px rgba(0, 0, 0, 0.28),
+    0 0 26px rgba(255, 132, 32, 0.06);
 }
 
 .grid-lines {
@@ -283,8 +284,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 132, 32, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 132, 32, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255, 132, 32, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 132, 32, 0.018) 1px, transparent 1px);
   background-size: 100% 170px, 170px 100%;
   pointer-events: none;
   z-index: 0;
