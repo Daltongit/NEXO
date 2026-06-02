@@ -28,53 +28,59 @@
 <body class="auth-body">
     <a class="skip-link" href="#auth-main">Saltar al contenido</a>
 
-    <main id="auth-main" class="auth-layout">
+    <main id="auth-main" class="auth-shell">
         <section class="auth-showcase">
-            <a class="brand auth-brand" href="./index.html" aria-label="Ir al inicio de NEXO">
-                <span class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" fill="none">
-                        <path d="M14 48V16L50 48V16" stroke="currentColor" stroke-width="6" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </span>
-                <span class="brand-text-wrap">
-                    <span class="brand-text">NEXO</span>
-                    <span class="brand-subtext">Servicios estudiantiles</span>
-                </span>
-            </a>
+            <div class="auth-showcase-inner reveal">
+                <a class="brand auth-brand" href="./index.html" aria-label="Ir al inicio de NEXO">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M14 48V16L50 48V16" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <span class="brand-text-wrap">
+                        <span class="brand-text">NEXO</span>
+                        <span class="brand-subtext">Servicios estudiantiles</span>
+                    </span>
+                </a>
 
-            <div class="auth-showcase-content reveal">
-                <span class="section-tag">Acceso profesional</span>
-                <h1>Tu cuenta te abre el entorno donde gestionas servicios, clientes y reputación.</h1>
-                <p>
-                    Crea tu perfil, publica servicios, conversa con clientes y administra pedidos
-                    desde una sola interfaz orientada a estudiantes universitarios.
-                </p>
+                <div class="auth-copy">
+                    <span class="section-tag">Acceso profesional</span>
+                    <h1>Tu cuenta activa el entorno donde publicas, gestionas y creces profesionalmente.</h1>
+                    <p>
+                        Accede a una experiencia enfocada en servicios estudiantiles,
+                        reputación profesional, mensajería, pedidos y visibilidad.
+                    </p>
+                </div>
 
-                <div class="auth-benefits-list">
-                    <article class="auth-mini-card reveal reveal-delay-1">
-                        <h2>Perfil profesional</h2>
-                        <p>Bio, habilidades, carrera, portafolio y experiencia.</p>
+                <div class="auth-preview-grid">
+                    <article class="auth-preview-card reveal reveal-delay-1">
+                        <span>01</span>
+                        <h2>Perfil claro</h2>
+                        <p>Identidad profesional orientada a contratación real.</p>
                     </article>
 
-                    <article class="auth-mini-card reveal reveal-delay-2">
-                        <h2>Gestión operativa</h2>
-                        <p>Órdenes activas, estado de servicios y seguimiento.</p>
+                    <article class="auth-preview-card reveal reveal-delay-2">
+                        <span>02</span>
+                        <h2>Gestión centralizada</h2>
+                        <p>Servicios, pedidos y mensajes en un solo lugar.</p>
                     </article>
 
-                    <article class="auth-mini-card reveal reveal-delay-3">
-                        <h2>Mensajería integrada</h2>
-                        <p>Comunicación directa entre cliente y estudiante.</p>
+                    <article class="auth-preview-card reveal reveal-delay-3">
+                        <span>03</span>
+                        <h2>Proyección real</h2>
+                        <p>Construye experiencia antes de graduarte.</p>
                     </article>
                 </div>
             </div>
         </section>
 
         <section class="auth-panel">
-            <div class="auth-topbar">
+            <div class="auth-panel-topbar">
                 <button class="theme-toggle" type="button" aria-label="Cambiar tema" data-theme-toggle>
                     <span class="theme-toggle-icon"></span>
                 </button>
+
                 <a class="back-link" href="./index.html">Volver al inicio</a>
             </div>
 
@@ -99,20 +105,30 @@
                         <p>Ingresa tus credenciales para abrir tu panel profesional.</p>
                     </div>
 
-                    <form id="login-form" class="form-shell" novalidate>
-                        <div class="form-group">
+                    <form id="login-form" class="auth-form-grid" novalidate>
+                        <div class="form-group form-group-full">
                             <label for="login-email">Correo electrónico</label>
-                            <input id="login-email" name="email" type="email" autocomplete="email"
-                                placeholder="tu@correo.com" required />
+                            <div class="field-shell">
+                                <input id="login-email" name="email" type="email" autocomplete="email"
+                                    placeholder="tu@correo.com" required />
+                            </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-full">
                             <label for="login-password">Contraseña</label>
-                            <input id="login-password" name="password" type="password"
-                                autocomplete="current-password" placeholder="••••••••" required />
+                            <div class="field-shell password-shell">
+                                <input id="login-password" name="password" type="password"
+                                    autocomplete="current-password" placeholder="Escribe tu contraseña" required />
+                                <button class="password-toggle" type="button" data-toggle-password="login-password"
+                                    aria-label="Mostrar contraseña">
+                                    <span>Ver</span>
+                                </button>
+                            </div>
                         </div>
 
-                        <button class="btn btn-primary btn-block" type="submit">Ingresar a NEXO</button>
+                        <button class="btn btn-primary btn-block auth-submit" type="submit">
+                            Ingresar a NEXO
+                        </button>
                     </form>
 
                     <div class="auth-footer-note">
@@ -124,62 +140,104 @@
                 <section class="auth-form-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register"
                     hidden>
                     <div class="panel-heading">
-                        <h2>Crea tu cuenta profesional</h2>
-                        <p>Registra tus datos para empezar a publicar servicios dentro de la plataforma.</p>
+                        <h2>Crea tu cuenta</h2>
+                        <p>Completa solo lo necesario para entrar rápido y bien.</p>
                     </div>
 
-                    <form id="register-form" class="form-shell" novalidate>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="register-fullname">Nombre completo</label>
+                    <form id="register-form" class="auth-form-grid auth-form-grid-register" novalidate>
+                        <div class="form-group">
+                            <label for="register-fullname">Nombre completo</label>
+                            <div class="field-shell">
                                 <input id="register-fullname" name="full_name" type="text" autocomplete="name"
                                     placeholder="Nombre y apellido" required />
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="register-username">Usuario</label>
+                        <div class="form-group">
+                            <label for="register-username">Usuario</label>
+                            <div class="field-shell">
                                 <input id="register-username" name="username" type="text" autocomplete="username"
                                     placeholder="usuario_nexo" required />
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="register-email">Correo electrónico</label>
+                        <div class="form-group">
+                            <label for="register-email">Correo electrónico</label>
+                            <div class="field-shell">
                                 <input id="register-email" name="email" type="email" autocomplete="email"
                                     placeholder="tu@correo.com" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="register-career">Carrera o especialidad</label>
-                                <input id="register-career" name="career" type="text"
-                                    placeholder="Diseño, Software, Idiomas..." />
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="register-password">Contraseña</label>
-                                <input id="register-password" name="password" type="password"
-                                    autocomplete="new-password" placeholder="Mínimo 8 caracteres" required
-                                    minlength="8" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="register-password-confirm">Confirmar contraseña</label>
-                                <input id="register-password-confirm" name="password_confirm" type="password"
-                                    autocomplete="new-password" placeholder="Repite la contraseña" required
-                                    minlength="8" />
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="register-bio">Presentación breve</label>
-                            <textarea id="register-bio" name="bio" rows="4"
-                                placeholder="Describe brevemente tus habilidades, enfoque y servicios."></textarea>
+                            <label for="register-birthdate">Fecha de nacimiento</label>
+                            <div class="field-shell">
+                                <input id="register-birthdate" name="birthdate" type="date" required />
+                            </div>
                         </div>
 
-                        <button class="btn btn-primary btn-block" type="submit">Crear cuenta</button>
+                        <div class="form-group">
+                            <label for="register-career">Carrera o especialidad</label>
+                            <div class="field-shell">
+                                <select id="register-career" name="career" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Desarrollo de software">Desarrollo de software</option>
+                                    <option value="Diseño gráfico">Diseño gráfico</option>
+                                    <option value="Marketing digital">Marketing digital</option>
+                                    <option value="Idiomas">Idiomas</option>
+                                    <option value="Fotografía">Fotografía</option>
+                                    <option value="Producción audiovisual">Producción audiovisual</option>
+                                    <option value="Tutorías académicas">Tutorías académicas</option>
+                                    <option value="Administración">Administración</option>
+                                    <option value="Arquitectura">Arquitectura</option>
+                                    <option value="Otra">Otra</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-interest">Interés principal</label>
+                            <div class="field-shell">
+                                <select id="register-interest" name="interest" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Generar ingresos">Generar ingresos</option>
+                                    <option value="Ganar experiencia">Ganar experiencia</option>
+                                    <option value="Crear portafolio">Crear portafolio</option>
+                                    <option value="Conseguir clientes">Conseguir clientes</option>
+                                    <option value="Aprender trabajando">Aprender trabajando</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-password">Contraseña</label>
+                            <div class="field-shell password-shell">
+                                <input id="register-password" name="password" type="password"
+                                    autocomplete="new-password" placeholder="Mínimo 8 caracteres" required
+                                    minlength="8" />
+                                <button class="password-toggle" type="button" data-toggle-password="register-password"
+                                    aria-label="Mostrar contraseña">
+                                    <span>Ver</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-password-confirm">Confirmar contraseña</label>
+                            <div class="field-shell password-shell">
+                                <input id="register-password-confirm" name="password_confirm" type="password"
+                                    autocomplete="new-password" placeholder="Repite la contraseña" required
+                                    minlength="8" />
+                                <button class="password-toggle" type="button"
+                                    data-toggle-password="register-password-confirm" aria-label="Mostrar contraseña">
+                                    <span>Ver</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-block auth-submit form-group-full" type="submit">
+                            Crear cuenta
+                        </button>
                     </form>
 
                     <div class="auth-footer-note">
