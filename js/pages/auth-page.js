@@ -58,7 +58,7 @@ function bindChoiceGroups() {
   document.querySelectorAll("[data-choice-group]").forEach((group) => {
     const groupName = group.getAttribute("data-choice-group");
     const hiddenInput = document.getElementById(`register-${groupName}`);
-    const chips = group.querySelectorAll(".zero-chip");
+    const chips = group.querySelectorAll(".x-chip");
 
     chips.forEach((chip) => {
       chip.addEventListener("click", () => {
@@ -67,9 +67,7 @@ function bindChoiceGroups() {
         chips.forEach((item) => item.classList.remove("is-active"));
         chip.classList.add("is-active");
 
-        if (hiddenInput) {
-          hiddenInput.value = value;
-        }
+        if (hiddenInput) hiddenInput.value = value;
       });
     });
   });
@@ -85,7 +83,7 @@ function applyHashMode() {
 }
 
 function initAuthPage() {
-  if (!document.body.classList.contains("auth-zero")) return;
+  if (!document.body.classList.contains("auth-minimal-x")) return;
 
   bindAuthTabs();
   bindPasswordToggles();
