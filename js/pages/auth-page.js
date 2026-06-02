@@ -1,11 +1,11 @@
-function switchAuthPanel(mode) {
+function setAuthMode(mode) {
   const loginTab = document.getElementById("tab-login");
   const registerTab = document.getElementById("tab-register");
   const loginPanel = document.getElementById("panel-login");
   const registerPanel = document.getElementById("panel-register");
-  const switcher = document.querySelector(".auth-mode-switch");
+  const tabs = document.querySelector(".auth-tabs");
 
-  if (!loginTab || !registerTab || !loginPanel || !registerPanel || !switcher) return;
+  if (!loginTab || !registerTab || !loginPanel || !registerPanel || !tabs) return;
 
   const isLogin = mode === "login";
 
@@ -21,14 +21,14 @@ function switchAuthPanel(mode) {
   loginPanel.hidden = !isLogin;
   registerPanel.hidden = isLogin;
 
-  switcher.classList.toggle("is-register", !isLogin);
+  tabs.classList.toggle("is-register", !isLogin);
 }
 
-function bindTabs() {
+function bindAuthTabs() {
   document.querySelectorAll("[data-auth-tab]").forEach((button) => {
     button.addEventListener("click", () => {
       const mode = button.getAttribute("data-auth-tab") || "login";
-      switchAuthPanel(mode);
+      setAuthMode(mode);
       window.location.hash = mode;
     });
   });
@@ -36,35 +36,45 @@ function bindTabs() {
   document.querySelectorAll("[data-switch-auth]").forEach((button) => {
     button.addEventListener("click", () => {
       const mode = button.getAttribute("data-switch-auth") || "login";
-      switchAuthPanel(mode);
+      setAuthMode(mode);
       window.location.hash = mode;
     });
   });
 }
 
-function bindPasswordVision() {
+function bindPasswordToggles() {
   document.querySelectorAll("[data-toggle-password]").forEach((button) => {
     button.addEventListener("click", () => {
       const inputId = button.getAttribute("data-toggle-password");
       const input = document.getElementById(inputId);
       if (!input) return;
 
-      const willShow = input.type === "password";
-      input.type = willShow ? "text" : "password";
+      const shouldShow = input.type === "password";
+      input.type = shouldShow ? "text" : "password";
 
-      button.classList.toggle("is-active", willShow);
-      button.setAttribute("aria-label", willShow ? "Ocultar contraseña" : "Mostrar contraseña");
+      button.classList.toggle("is-active", shouldShow);
+      button.setAttribute("aria-label", shouldShow ? "Ocultar contraseña" : "Mostrar contraseña");
     });
   });
 }
 
-function revealOnLoad() {
-  const elements = document.querySelectorAll(".reveal");
-  if (!elements.length) return;
+function bindChoiceGroups() {
+  document.querySelectorAll("[data-choice-group]").forEach((group) => {
+    const groupName = group.getAttribute("data-choice-group");
+    const hiddenInput = document.getElementById(`register-${groupName}`);
+    const chips = group.querySelectorAll(".choice-chip");
 
-  requestAnimationFrame(() => {
-    elements.forEach((element) => {
-      element.classList.add("is-visible");
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const value = chip.getAttribute("data-choice-value") || "";
+
+        chips.forEach((item) => item.classList.remove("is-active"));
+        chip.classList.add("is-active");
+
+        if (hiddenInput) {
+          hiddenInput.value = value;
+        }
+      });
     });
   });
 }
@@ -72,19 +82,19 @@ function revealOnLoad() {
 function applyHashMode() {
   const mode = window.location.hash.replace("#", "");
   if (mode === "register") {
-    switchAuthPanel("register");
+    setAuthMode("register");
     return;
   }
-  switchAuthPanel("login");
+  setAuthMode("login");
 }
 
 function initAuthPage() {
   if (!document.body.classList.contains("auth-body")) return;
 
-  bindTabs();
-  bindPasswordVision();
+  bindAuthTabs();
+  bindPasswordToggles();
+  bindChoiceGroups();
   applyHashMode();
-  revealOnLoad();
 
   window.addEventListener("hashchange", applyHashMode);
 }
